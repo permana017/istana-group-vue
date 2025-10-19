@@ -1,0 +1,70 @@
+{
+  "app": {
+    "brand": "Istana",
+    "back": "Kembali",
+    "login": "Masuk",
+    "logout": "Keluar"
+  },
+  "nav": {
+    "products": "Produk",
+    "cart": "Keranjang",
+    "orders": "Riwayat Pesanan",
+    "dashboard": "Dasbor",
+    "users": "Pengguna"
+  },
+  "product": {
+    "loading": "Memuat produk...",
+    "notFound": "Produk tidak ditemukan.",
+    "price": "Harga",
+    "addToCart": "Tambah ke Keranjang",
+    "buyNow": "Beli Sekarang",
+    "description": "Deskripsi Produk",
+    "seeAll": "Lihat semua",
+    "sold": "terjual"
+  },
+  "list": {
+    "title": "Produk Unggulan",
+    "subtitle": "Temukan produk terbaik untukmu",
+    "searchPlaceholder": "Cari di sini...",
+    "allCategories": "Semua Kategori",
+    "sort": {
+      "popular": "Paling Populer",
+      "priceAsc": "Harga Terendah",
+      "priceDesc": "Harga Tertinggi",
+      "name": "Nama Produk"
+    },
+    "loading": "Memuat produk...",
+    "empty": "Tidak ada produk.",
+    "official": "Official",
+    "soldPrefix": "Terjual",
+    "addToCartShort": "Keranjang",
+    "detail": "Detail",
+    "perPage": "Per halaman",
+    "prev": "Sebelumnya",
+    "next": "Berikutnya",
+    "pageLabel": "Halaman",
+    "addedToCart": "Ditambahkan ke keranjang: {title}"
+  }
+  ,
+  "pagination": {
+    "perPage": "Per halaman",
+    "prev": "Sebelumnya",
+    "next": "Berikutnya",
+    "page": "Halaman",
+    "first": "Pertama",
+    "last": "Terakhir"
+  },
+  "filters": {
+    "searchPlaceholder": "Cari produk…",
+    "allCategories": "Semua Kategori",
+    "dir": { "asc": "Naik", "desc": "Turun" }
+  },
+  "admin": {
+    "sort": {
+      "title": "Judul",
+      "price": "Harga",
+      "category": "Kategori",
+      "rating": "Rating"
+    }
+  }
+}

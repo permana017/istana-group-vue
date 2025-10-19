@@ -1,0 +1,70 @@
+{
+  "app": {
+    "brand": "Istana",
+    "back": "Back",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "nav": {
+    "products": "Products",
+    "cart": "Cart",
+    "orders": "Order History",
+    "dashboard": "Dashboard",
+    "users": "Users"
+  },
+  "product": {
+    "loading": "Loading product...",
+    "notFound": "Product not found.",
+    "price": "Price",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "description": "Product Description",
+    "seeAll": "See all",
+    "sold": "sold"
+  },
+  "list": {
+    "title": "Featured Products",
+    "subtitle": "Find the best products for you",
+    "searchPlaceholder": "Search here...",
+    "allCategories": "All Categories",
+    "sort": {
+      "popular": "Most Popular",
+      "priceAsc": "Lowest Price",
+      "priceDesc": "Highest Price",
+      "name": "Product Name"
+    },
+    "loading": "Loading products...",
+    "empty": "No products.",
+    "official": "Official",
+    "soldPrefix": "Sold",
+    "addToCartShort": "Add to Cart",
+    "detail": "Detail",
+    "perPage": "Per page",
+    "prev": "Previous",
+    "next": "Next",
+    "pageLabel": "Page",
+    "addedToCart": "Added to cart: {title}"
+  }
+  ,
+  "pagination": {
+    "perPage": "Per page",
+    "prev": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "first": "First",
+    "last": "Last"
+  },
+  "filters": {
+    "searchPlaceholder": "Search products…",
+    "allCategories": "All Categories",
+    "dir": { "asc": "Asc", "desc": "Desc" }
+  },
+  "admin": {
+    "sort": {
+      "title": "Title",
+      "price": "Price",
+      "category": "Category",
+      "rating": "Rating"
+    }
+  }
+}
