@@ -116,11 +116,13 @@ import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
 import { useToastStore } from "@/stores/toast";
+import { useModeStore } from "@/stores/mode";
 import BaseCard from "@/components/BaseCard.vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
 const toast = useToastStore();
+const mode = useModeStore();
 
 const loginForm = ref({
   username: "johnd",
@@ -136,7 +138,13 @@ const handleLogin = async () => {
 
   if (result.success) {
     toast.success("Login sukses! Selamat datang 👋", { duration: 2500 });
-    router.push("/");
+    // Redirect: utamakan mode yang dipilih, baru fallback ke role
+    let target = "/";
+    if (mode.mode === "admin") target = "/admin/products";
+    else if (mode.mode === "user") target = "/user/products";
+    else if (authStore.isAdmin) target = "/admin/products";
+    else target = "/user/products";
+    router.push(target);
   } else if (result.error) {
     toast.error(result.error);
   }

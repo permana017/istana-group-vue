@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
+import { useModeStore } from '@/stores/mode'
 import { authService } from '@/services/authService'
 
 export const useAuthStore = defineStore('auth', () => {
@@ -57,6 +58,11 @@ export const useAuthStore = defineStore('auth', () => {
     // Clear all persisted data for this app (token, cart, orders, locale, mode, etc.)
     localStorage.clear()
     error.value = null
+    // also clear visitor mode explicitly
+    try {
+      const mode = useModeStore()
+      mode.clear()
+    } catch (_) {}
   }
 
   const clearError = () => {

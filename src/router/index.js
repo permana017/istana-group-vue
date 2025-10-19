@@ -42,7 +42,11 @@ const routes = [
     children: [
       { path: "", redirect: "/admin/products" },
       { path: "products", name: "AdminProducts", component: AdminProducts },
-      { path: "products/:id", name: "AdminProductDetail", component: AdminProductDetail },
+      {
+        path: "products/:id",
+        name: "AdminProductDetail",
+        component: AdminProductDetail,
+      },
       { path: "users", name: "AdminUsers", component: AdminUsers },
       { path: "orders", name: "AdminOrders", component: AdminOrders },
     ],
@@ -82,13 +86,27 @@ router.beforeEach(async (to, from, next) => {
     }
   }
 
+  // If user is not authenticated and no mode selected yet, force go to Home (block Login too)
+  if (
+    !authStore.isAuthenticated &&
+    (mode.mode === null || mode.mode === undefined)
+  ) {
+    if (to.path !== "/") {
+      return next("/");
+    }
+  }
+
   if (to.meta.requiresGuest && authStore.isAuthenticated) {
     // Allow staying on '/' (Home) if mode hasn't been chosen yet
-    if (to.path === '/' && (mode.mode === null || mode.mode === undefined)) {
+    if (to.path === "/" && (mode.mode === null || mode.mode === undefined)) {
       return next();
     }
     // Otherwise redirect to appropriate start page based on admin or chosen mode
-    const goAdmin = authStore.isAdmin || mode.mode === 'admin';
+    // Prioritize chosen mode; fallback to role only if mode is not set
+    let goAdmin;
+    if (mode.mode === "admin") goAdmin = true;
+    else if (mode.mode === "user") goAdmin = false;
+    else goAdmin = authStore.isAdmin;
     next(goAdmin ? "/admin/products" : "/user/products");
   } else if (to.meta.requiresAuth && !authStore.isAuthenticated) {
     // If route requires auth and user is not authenticated, redirect to login

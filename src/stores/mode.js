@@ -21,5 +21,13 @@ export const useModeStore = defineStore("mode", {
     toggle() {
       this.setMode(this.mode === "admin" ? "user" : "admin");
     },
+    clear() {
+      this.mode = null;
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (_) {
+        /* noop */
+      }
+    },
   },
 });

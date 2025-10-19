@@ -92,7 +92,7 @@ const { t, locale } = useI18n();
 
 const handleLogout = () => {
   auth.logout();
-  router.push("/login");
+  router.push("/");
 };
 
 const onChangeLocale = (e) => {
